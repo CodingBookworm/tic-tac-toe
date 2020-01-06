@@ -1,0 +1,22 @@
+.board {
+    width: 20rem;
+    height: 20rem;
+    margin: 3rem 0 4rem 0;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template: repeat(3,1fr) / repeat(3,1fr);
+    justify-content: stretch;
+    grid-gap: 10px;
+    background-color: darkslateblue;
+    height: 100%;
+    width: 100%;
+}
+
+.square {
+    background-color: white;
+    font-weight: 900;
+    font-size: 4.5rem;
+    text-align: center;
+  }
