@@ -11,23 +11,29 @@ const gameBoard = {
             const mark = document.createElement('div');
             $(mark).css("color", currentPlayer.color);
             ($(mark)).html(`<span class="mark">${currentPlayer.symbol}</span>`)
-            console.log(mark);
+            console.log('mark')
             return mark;
     },
     markBoard: (e, currentPlayer)=> {
         $(e.target).append(gameBoard.makeMark(currentPlayer));
+        $(e.target).off();
         },
 }
 
 const game =  {
-    playGame: () => {
-        let currentPlayer = player1;
-        $('.square').click((e)=>gameBoard.markBoard(e,currentPlayer));
+        //a turn will automatically switch the player so assign it to player2
+        currentPlayer: (function(){return player2})(),
+        takeTurn: (e) => {
+        gameBoard.markBoard(e,game.changePlayer())
         //selectPlayer();
-
+    },
+    changePlayer: () =>{
+        game.currentPlayer = (game.currentPlayer === player1)? player2 : player1;
+        return game.currentPlayer;
     }
 
 }
 
-game.playGame()
+let currentPlayer = player1;
+$('.square').click((e)=>game.takeTurn(e));
 
