@@ -2,13 +2,15 @@
 <html>
     <head>
         <title>Tic Tac Toe</title>
-        <link rel="stylesheet" href="tic.css">
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="static/inc/tic.css">
+
 
     </head>
     <body>
         <div class='board'>
             <div class='grid-container'>
-                <div class="square" id='1' onclick=squareclicked()></div>
+                <div class="square" id='1'></div>
                 <div class="square" id='2'></div>
                 <div class="square" id='3'></div>
                 <div class="square" id='4'></div>
@@ -19,5 +21,10 @@
                 <div class="square" id='9'></div>
             </div>
         </div>
+        <button>Start</button>
+
+        
+        <script src='static/inc/jquery-3.4.1.min.js'></script>
+        <script src="static/inc/tic.js"></script>
     </body>
 </html>

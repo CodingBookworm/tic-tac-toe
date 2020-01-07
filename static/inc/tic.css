@@ -1,3 +1,6 @@
+body {
+  background-color: #393e46;
+}
 .board {
     width: 20rem;
     height: 20rem;
@@ -9,14 +12,21 @@
     grid-template: repeat(3,1fr) / repeat(3,1fr);
     justify-content: stretch;
     grid-gap: 10px;
-    background-color: darkslateblue;
+    background-color: white;
     height: 100%;
     width: 100%;
 }
 
 .square {
-    background-color: white;
+    background-color: #393e46;
     font-weight: 900;
     font-size: 4.5rem;
     text-align: center;
   }
+
+.mark {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Archivo Black', sans-serif;
+}
