@@ -5,33 +5,29 @@ const playerFactory = (name, symbol, color) => {
 const player1 = playerFactory('Player1','X','#33FFBD');
 const player2 = playerFactory('Player2','O','#33F4FF');
 
-// const gameBoard = {
-//     board = Array(9).fill(''),
-//     }
+const gameBoard = {
+    board: (function(){return Array(9).fill('')})(),
+    makeMark: (currentPlayer) =>{
+            const mark = document.createElement('div');
+            $(mark).css("color", currentPlayer.color);
+            ($(mark)).html(`<span class="mark">${currentPlayer.symbol}</span>`)
+            console.log(mark);
+            return mark;
+    },
+    markBoard: (e, currentPlayer)=> {
+        $(e.target).append(gameBoard.makeMark(currentPlayer));
+        },
+}
 
-const game = () => {
-    let board = Array(9).fill('');
-    let currentPlayer = player1;
-
-    const playGame = () => {
-        selectPlayer();
+const game =  {
+    playGame: () => {
+        let currentPlayer = player1;
+        $('.square').click((e)=>gameBoard.markBoard(e,currentPlayer));
+        //selectPlayer();
 
     }
 
 }
-let currentPlayer = player1;
-function makeMark(currentPlayer){
-    const mark = document.createElement('div');
-    $(mark).css("color", currentPlayer.color);
-    ($(mark)).html(`<span class="mark">${currentPlayer.symbol}</span>`)
-    console.log(mark);
-    return mark;
-}
-let board = Array(9).fill('');
-function markBoard() {
-    console.log(this);
-    $(this).append(makeMark(currentPlayer));
 
+game.playGame()
 
-}
-$('.square').click(markBoard);
