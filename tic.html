@@ -3,11 +3,16 @@
     <head>
         <title>Tic Tac Toe</title>
         <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Lato&display=swap" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="static/inc/reset.css"> -->
         <link rel="stylesheet" href="static/inc/tic.css">
 
 
+
     </head>
-    <body>
+    <body class="body">
+        <div class="flex-wrapper">
+        <h1 class="heading">TIC TAC TOE</h1>
+        <h2 class="message"></h2>
         <div class='board'>
             <div class='grid-container'>
                 <div class="square" id='0'></div>
@@ -21,10 +26,11 @@
                 <div class="square" id='8'></div>
             </div>
         </div>
-        <button>Start</button>
-
+        <button onclick="game.startGame()">NEW GAME</button>
+        </div>
         
         <script src='static/inc/jquery-3.4.1.min.js'></script>
         <script src="static/inc/tic.js"></script>
+       
     </body>
 </html>
