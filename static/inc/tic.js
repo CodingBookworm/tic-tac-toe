@@ -82,7 +82,7 @@ const game =  {
     },
     startGame: () =>{
         //clear previous
-        $('.square').html('').off();
+        $('.square').html('').removeClass('winner').off();
 
         gameBoard.board = [0,1,2,3,4,5,6,7,8,9];
         game.currentPlayer = player1;
